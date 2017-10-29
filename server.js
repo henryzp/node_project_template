@@ -16,7 +16,7 @@ const app = new Koa();
 // }));
 
 const r = path => resolve(__dirname, path)
-const MIDDLEWARE = ['general', 'router']
+const MIDDLEWARE = ['response', 'general', 'router']
 
 const useMiddleware = (app) => {
   // 中间件的个数不定，通过 Ramda 的特性，从右往左进行函数组合，右侧函数的返回结果总是左侧函数的输入参数

@@ -104,13 +104,10 @@ export const log = convert(async (ctx, next) => {
 
 export const required = rules => convert(async (ctx, next) => {
   let errors = [];
-  console.log(ctx.request.body);
   const passRules = R.forEachObjIndexed(
     (value, key) => {
       if (Array.isArray(value)) {
-        console.log(1111);
         errors = R.filter(i => {
-          console.log(R.has(i, ctx.request[key]));
           return !R.has(i, ctx.request[key]);
         })(value)
       } else {

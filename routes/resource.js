@@ -13,7 +13,7 @@ export class Resource {
         ctx.body = ctx.errors;
         return;
     }
-    ctx.body = 123
+    ctx.state.data = {a: 1, b: 2};
   }
 
   @post('/testPost')
